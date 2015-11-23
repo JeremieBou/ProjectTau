@@ -13,12 +13,8 @@ allprojects {
 
     version = '1.0'
     ext {
-        appName = "project-tau"
-        gdxVersion = '1.7.0'
-        roboVMVersion = '1.8.0'
-        box2DLightsVersion = '1.4'
-        ashleyVersion = '1.6.0'
-        aiVersion = '1.6.0'
+        appName = "ProjectTau"
+        gdxVersion = '1.7.1'
     }
 
     repositories {
@@ -47,6 +43,7 @@ project(":core") {
     dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+        compile "net.onedaybeard.artemis:artemis-odb:1.2.1"
     }
 }
 

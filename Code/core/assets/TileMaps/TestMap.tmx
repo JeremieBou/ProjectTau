@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="64" tileheight="64" nextobjectid="1">
+ <tileset firstgid="1" name="DirtTiles" tilewidth="64" tileheight="64">
+  <image source="../Graphics/Tilesets/DirtTileSet.png" width="256" height="256"/>
+  <tile id="0">
+   <properties>
+    <property name="Blocked" value="0"/>
+    <property name="Height" value="0"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Blocked" value="1"/>
+    <property name="Height" value="1"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="Blocked" value="1"/>
+    <property name="Heigth" value="1"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Blocked" value="1"/>
+    <property name="Height" value="1"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="Blocked" value="1"/>
+    <property name="Heigth1" value="1"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="Blocked" value="1"/>
+    <property name="Heigth" value="1"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="Blocked" value="1"/>
+    <property name="Heigth" value="1"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="Blocked" value="1"/>
+    <property name="Heigth" value="1"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="Blocked" value="1"/>
+    <property name="Heigth" value="1"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="Blocked" value="1"/>
+    <property name="Heigth" value="1"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="Blocked" value="1"/>
+    <property name="Heigth" value="1"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="17" name="Grid" tilewidth="64" tileheight="64">
+  <image source="../Graphics/Tilesets/Gridborder.png" width="64" height="64"/>
+ </tileset>
+ <layer name="Tiles" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt3ct2gzAMRVGavtv//98y6YQVgy1L+Fo+gzNpQxZolxBImjy2bXsQERERES3W194bufdp9HjfeyH3PvCQCg+t8NAKD/9+T8JjrmbyqP0bmzllj9K+ntlF0aM07+PPMrooeVzNt2SUyWS0R8tzjyurDC4KHiNuV8oyi1JZPVpn3GOCx/nvrLO1Lre6R2l2vY87ePjMbvRxGQ8/h5bnanjEdXToccEj1gmPHHnMFg88soaHVhk9PI+N0cdRPPDAAw888MADDzw0PXqvieLh79FzPZPzQV+Pow0eeKjMbMTjWjaPka8d4eG7/njgsZLH/zbUbkekh8d9ZfBo2Q487vGo3U/wuM+jZnuUPazXTZQ9rsIDDzzwwAOPbB7W8FjLI3K78MADDzzwwAMPPPDAI7NHZHjggYfeeuOhlZrHqEY74FHncfdnqah5eGyT533hoeXRY6L4/pLVPVqXxSPGxPo+cTziPCzL4uHv8exzm/Hw9aida+k2tSazeFjW0dvjaq5nxws84jysM1f4/o9sHlH7Fh6aJrN4tIQHHnjM5VF7vo5H/Pw5Hxzn0ft55Xj4zN/rewBm/n8DBQ/vMnrMHB5a4aEVHlpZPb73Xsm9H6MHERERERER5e4PntlBbg==
+  </data>
+ </layer>
+ <layer name="Grid" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMBKGr8P3LDpZDwVVTVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/AY83mC8=
+  </data>
+ </layer>
+</map>
