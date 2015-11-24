@@ -1,11 +1,9 @@
 package com.jeremiebou.projecttau.Components;
 
 import com.artemis.Component;
-import com.badlogic.gdx.maps.objects.EllipseMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.math.Ellipse;
 import com.badlogic.gdx.math.Vector2;
 
 public class TileMapComponent extends Component{

@@ -17,7 +17,7 @@
   <tile id="2">
    <properties>
     <property name="Blocked" value="1"/>
-    <property name="Heigth" value="1"/>
+    <property name="Height" value="1"/>
    </properties>
   </tile>
   <tile id="3">
@@ -29,43 +29,43 @@
   <tile id="4">
    <properties>
     <property name="Blocked" value="1"/>
-    <property name="Heigth1" value="1"/>
+    <property name="Height" value="1"/>
    </properties>
   </tile>
   <tile id="5">
    <properties>
     <property name="Blocked" value="1"/>
-    <property name="Heigth" value="1"/>
+    <property name="Height" value="1"/>
    </properties>
   </tile>
   <tile id="6">
    <properties>
     <property name="Blocked" value="1"/>
-    <property name="Heigth" value="1"/>
+    <property name="Height" value="1"/>
    </properties>
   </tile>
   <tile id="7">
    <properties>
     <property name="Blocked" value="1"/>
-    <property name="Heigth" value="1"/>
+    <property name="Height" value="1"/>
    </properties>
   </tile>
   <tile id="8">
    <properties>
     <property name="Blocked" value="1"/>
-    <property name="Heigth" value="1"/>
+    <property name="Height" value="1"/>
    </properties>
   </tile>
   <tile id="9">
    <properties>
     <property name="Blocked" value="1"/>
-    <property name="Heigth" value="1"/>
+    <property name="Height" value="1"/>
    </properties>
   </tile>
   <tile id="10">
    <properties>
     <property name="Blocked" value="1"/>
-    <property name="Heigth" value="1"/>
+    <property name="Height" value="0.5"/>
    </properties>
   </tile>
  </tileset>

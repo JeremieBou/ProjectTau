@@ -13,7 +13,7 @@ public class TileMapRenderSystem extends EntityProcessingSystem {
 
 	@Override
 	protected void process(Entity e) {
-		int[] layers = {0, 1};
+		int[] layers = {0};
 		this.world.getMapper(TileMapComponent.class).get(e).getRenderer().render(layers);
 	}
 
