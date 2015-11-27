@@ -1,4 +1,4 @@
-package com.jeremiebou.projecttau.Components;
+package com.jeremiebou.projecttau.TiledMaps;
 
 import com.artemis.Component;
 import com.badlogic.gdx.maps.tiled.TiledMap;

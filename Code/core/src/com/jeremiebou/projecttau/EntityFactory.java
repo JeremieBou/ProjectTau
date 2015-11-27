@@ -14,8 +14,8 @@ import com.jeremiebou.projecttau.Components.DebugRenderComponent;
 import com.jeremiebou.projecttau.Components.InputControllableComponent;
 import com.jeremiebou.projecttau.Components.RenderableComponent;
 import com.jeremiebou.projecttau.Components.SpriteComponent;
-import com.jeremiebou.projecttau.Components.TileMapComponent;
 import com.jeremiebou.projecttau.Components.TransformComponent;
+import com.jeremiebou.projecttau.TiledMaps.TileMapComponent;
 
 public class EntityFactory{
 	private World world;

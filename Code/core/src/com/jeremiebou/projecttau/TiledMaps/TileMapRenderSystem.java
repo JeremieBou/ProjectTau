@@ -1,9 +1,8 @@
-package com.jeremiebou.projecttau.Systems;
+package com.jeremiebou.projecttau.TiledMaps;
 
 import com.artemis.Aspect;
 import com.artemis.Entity;
 import com.artemis.systems.EntityProcessingSystem;
-import com.jeremiebou.projecttau.Components.TileMapComponent;
 
 public class TileMapRenderSystem extends EntityProcessingSystem {
 

@@ -9,15 +9,15 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
-import com.jeremiebou.projecttau.Components.TileMapComponent;
 import com.jeremiebou.projecttau.Systems.CameraSystem;
 import com.jeremiebou.projecttau.Systems.ControllerSystem;
 import com.jeremiebou.projecttau.Systems.InputSystem;
 import com.jeremiebou.projecttau.Systems.PhysicsSystem;
 import com.jeremiebou.projecttau.Systems.RenderSystem;
-import com.jeremiebou.projecttau.Systems.TileMapRenderSystem;
-import com.jeremiebou.projecttau.Systems.TiledMapSystem;
 import com.jeremiebou.projecttau.Systems.TransformSystem;
+import com.jeremiebou.projecttau.TiledMaps.TileMapComponent;
+import com.jeremiebou.projecttau.TiledMaps.TileMapRenderSystem;
+import com.jeremiebou.projecttau.TiledMaps.TiledMapSystem;
 
 public class GameScreen implements Screen {
 	private final World world;
