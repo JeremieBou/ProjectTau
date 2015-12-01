@@ -27,7 +27,9 @@ public class TileNode implements IndexedNode<TileNode>{
 		return connections;
 	}
 
-	
+	public String toString(){
+		return "" + height;
+	}
 	
 	
 }

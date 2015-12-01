@@ -20,6 +20,13 @@ public class TileGraph extends DefaultIndexedGraph<TileNode> implements IndexedG
 		
 	}
 	
+	public void createNode(int x, int y, float height){
+		nodes.add(new TileNode(x, y, height));
+	}
+	
+	public void addConnection(int x1, int y1, int x2, int y2){
+		
+	}
 	
 	
 	public TileNode getNode(int x, int y){
