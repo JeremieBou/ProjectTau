@@ -2,6 +2,7 @@ package com.jeremiebou.projecttau.TiledMaps;
 
 import com.artemis.Aspect;
 import com.artemis.BaseEntitySystem;
+import com.badlogic.gdx.ai.pfa.Connection;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
@@ -71,18 +72,26 @@ public class TiledMapSystem extends BaseEntitySystem {
 	private void processHeightMapIntoGraph(float[][] map){
 		for(int i = 0; i < map.length; i++){
 			for(int j = 0; j < map.length; j++){
-				graph.createNode(i, j, map[i][j]);
-				Array<Vector2> connections = getConnections(i, j, map);
+				graph.createNode(i, j, map[i][j]);				
 			}
 		}
 		
-		graph.startNode = graph.getNode(0, 0);
+		for(int i = 0; i < map.length; i++){
+			for(int j = 0; j < map.length; j++){
+				Array<Vector2> connections = getConnections(i, j, map);
+				
+				for(int k = 0; k < connections.size; k++){
+					graph.addConnection(i, j, (int) connections.get(k).x, (int) connections.get(k).y);
+				}
+				
+			}
+		}
 		
+		graph.startNode = graph.getNode(0, 0);		
 	}
 	
 	private Array<Vector2> getConnections(int x, int y, float[][] map){
 		Array<Vector2> connections = new Array<Vector2>();
-		System.out.println("\n\n" +  x + " : " + y);
 		
 		if(x > 0){
 			connections.add(new Vector2(x - 1, y));
@@ -97,14 +106,14 @@ public class TiledMapSystem extends BaseEntitySystem {
 			
 		}
 		
-		if(x < map.length){
+		if(x < (map.length -1)){
 			connections.add(new Vector2(x + 1, y));
 			
 			if(y > 0){
 				connections.add(new Vector2(x + 1, y - 1));	
 			}
 			
-			if(y < map[0].length){
+			if(y < (map[0].length -1)){
 				connections.add(new Vector2(x + 1, y + 1));
 			}
 		}
@@ -113,12 +122,8 @@ public class TiledMapSystem extends BaseEntitySystem {
 			connections.add(new Vector2(x, y - 1));
 		}
 		
-		if(y < map[0].length){
+		if(y < (map[0].length -1)){
 			connections.add(new Vector2(x, y + 1));
-		}
-		
-		for(int i = 0; i < connections.size; i++){
-			System.out.println(connections.get(i));
 		}
 		
 		return connections;

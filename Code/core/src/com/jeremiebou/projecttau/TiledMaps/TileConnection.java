@@ -3,17 +3,21 @@ package com.jeremiebou.projecttau.TiledMaps;
 import com.badlogic.gdx.ai.pfa.DefaultConnection;
 
 public class TileConnection extends DefaultConnection<TileNode>{
-	static final float NON_DIAGONAL_COST = (float) Math.sqrt(2);
+	private float cost;
 	
-	TileGraph worldMap;
-	
-	public TileConnection(TileGraph worldMap, TileNode fromNode, TileNode toNode) {
+	public TileConnection(TileNode fromNode, TileNode toNode, float cost) {
 		super(fromNode, toNode);
-		this.worldMap = worldMap;
+		this.cost = cost;
+		
 	}
 
 	public float getCost() {
 		
-		return 0;
+		return cost;
+	}
+	
+	public String toString(){
+		
+		return fromNode.toString() + " " + toNode.toString() + " " + cost;
 	}
 }

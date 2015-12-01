@@ -26,11 +26,26 @@ public class TileGraph extends DefaultIndexedGraph<TileNode> implements IndexedG
 	
 	public void addConnection(int x1, int y1, int x2, int y2){
 		
+		if(coordInRange(x1, y1) && coordInRange(x2, y2)){
+			TileNode tn1 = getNode(x1, y1);
+			TileNode tn2 = getNode(x2, y2);
+			float heightDifference = tn1.height - tn2.height;
+			float cost = 1 + heightDifference * heightDifference;
+			
+			if(cost < 2){				
+				tn1.getConnections().add(new TileConnection(tn1, tn2, cost));
+			}
+		}
+	}
+	
+	private boolean coordInRange(int x, int y){
+		return x >= 0 && x < sizeX && y >= 0 && y < sizeY;
 	}
 	
 	
 	public TileNode getNode(int x, int y){
 		return nodes.get(x * sizeY + y);
+		
 	}
 	
 	
