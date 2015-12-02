@@ -4,6 +4,8 @@ import com.badlogic.gdx.ai.pfa.indexed.DefaultIndexedGraph;
 import com.badlogic.gdx.ai.pfa.indexed.IndexedGraph;
 
 public class TileGraph extends DefaultIndexedGraph<TileNode> implements IndexedGraph<TileNode> {
+	private static final float DIGONAL_COST = (float)Math.sqrt(2);
+	
 	public final int sizeX;
 	public final int sizeY;
 	
@@ -30,12 +32,21 @@ public class TileGraph extends DefaultIndexedGraph<TileNode> implements IndexedG
 			TileNode tn1 = getNode(x1, y1);
 			TileNode tn2 = getNode(x2, y2);
 			float heightDifference = tn1.height - tn2.height;
-			float cost = 1 + heightDifference * heightDifference;
+			float cost = 1;
 			
-			if(cost < 2){				
+			
+			if(isDiagonal(x1, y1, x2, y2)){
+				cost = DIGONAL_COST;
+			}
+						
+			if(heightDifference < 1 && heightDifference > -1){				
 				tn1.getConnections().add(new TileConnection(tn1, tn2, cost));
 			}
 		}
+	}
+	
+	private boolean isDiagonal(int x1, int y1, int x2, int y2){
+		return Math.abs(x1-x2) + Math.abs(y1-y1) == 2;
 	}
 	
 	private boolean coordInRange(int x, int y){

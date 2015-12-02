@@ -3,6 +3,7 @@ package com.jeremiebou.projecttau.TiledMaps;
 import com.artemis.Aspect;
 import com.artemis.BaseEntitySystem;
 import com.badlogic.gdx.ai.pfa.Connection;
+import com.badlogic.gdx.ai.pfa.indexed.IndexedAStarPathFinder;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
@@ -12,9 +13,11 @@ import com.badlogic.gdx.utils.Array;
 
 public class TiledMapSystem extends BaseEntitySystem {
 	private TileGraph graph;
+	private IndexedAStarPathFinder<TileNode> aStar;
 	
 	public TiledMapSystem(){
 		super(Aspect.all(TileMapComponent.class));
+		
 		
 	}
 	
@@ -48,6 +51,22 @@ public class TiledMapSystem extends BaseEntitySystem {
 			}
 			
 			System.out.println(System.currentTimeMillis() - a);
+			
+			aStar = new IndexedAStarPathFinder<TileNode>(graph, true);
+			
+			TileGraphPath outPath = new TileGraphPath();
+			TileManhattanHeuristic heuristic = new TileManhattanHeuristic();
+			
+			aStar.searchNodePath(graph.getNode(10, 10), graph.getNode(10, 15), heuristic, outPath);
+			System.out.println(outPath.getCount() + "yay");
+			for(int i = 0; i < outPath.getCount(); i++){
+				System.out.println(outPath.get(i));
+			}
+			
+			
+			System.out.println(aStar.metrics.visitedNodes);
+			
+			
 		}		
 	}
 	
