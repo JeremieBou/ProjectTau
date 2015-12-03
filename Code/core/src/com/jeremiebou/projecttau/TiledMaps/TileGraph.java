@@ -32,7 +32,7 @@ public class TileGraph extends DefaultIndexedGraph<TileNode> implements IndexedG
 			TileNode tn1 = getNode(x1, y1);
 			TileNode tn2 = getNode(x2, y2);
 			float heightDifference = tn1.height - tn2.height;
-			float cost = 1;
+			float cost = 1f;
 			
 			
 			if(isDiagonal(x1, y1, x2, y2)){

@@ -55,9 +55,10 @@ public class TiledMapSystem extends BaseEntitySystem {
 			aStar = new IndexedAStarPathFinder<TileNode>(graph, true);
 			
 			TileGraphPath outPath = new TileGraphPath();
+			TileGraphConnectionPath outPath2 = new TileGraphConnectionPath();
 			TileManhattanHeuristic heuristic = new TileManhattanHeuristic();
-			
-			aStar.searchNodePath(graph.getNode(10, 10), graph.getNode(10, 15), heuristic, outPath);
+			boolean hello = aStar.searchNodePath(graph.getNode(10, 10), graph.getNode(10, 15), heuristic, outPath);
+			System.out.println(hello);
 			System.out.println(outPath.getCount() + "yay");
 			for(int i = 0; i < outPath.getCount(); i++){
 				System.out.println(outPath.get(i));
