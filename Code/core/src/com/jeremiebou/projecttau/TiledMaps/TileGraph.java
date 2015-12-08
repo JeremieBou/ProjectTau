@@ -61,11 +61,6 @@ public class TileGraph extends DefaultIndexedGraph<TileNode> implements IndexedG
 		
 	}
 	
-	@Override
-	public Array<Connection<TileNode>> getConnections(TileNode n){
-		return n.getConnections();
-	}
-	
 	public TileNode getNode(int index){
 		return nodes.get(index);
 	}	

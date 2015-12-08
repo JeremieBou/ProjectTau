@@ -16,7 +16,7 @@ public class TileNode implements IndexedNode<TileNode>{
 		this.x = x;
 		this.y = y;
 		this.height = height;
-		this.connections = new Array<Connection<TileNode>>(1);
+		this.connections = new Array<Connection<TileNode>>(8);
 	}
 	
 	public int getIndex() {

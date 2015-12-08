@@ -58,18 +58,20 @@ public class TiledMapSystem extends BaseEntitySystem {
 			TileGraphConnectionPath outPath2 = new TileGraphConnectionPath();
 			TileManhattanHeuristic heuristic = new TileManhattanHeuristic();
 			
+			graph.startNode = graph.getNode(20, 20);
+			
 			PathFinderRequest<TileNode> pfr = new PathFinderRequest<TileNode>(graph.getNode(10,  10), graph.getNode(10, 15), heuristic, outPath);
 			
-			for (int i = 0; i <= 5; i++) {
-				System.out.println(graph.getConnections(graph.getNode(10, 10 + i)));
+			for (int i = 0; i <= 2; i++) {
+				System.out.println(graph.getConnections(graph.getNode(20, 20 + i)));
 			}
 			
-			if(graph.getConnections(graph.getNode(10,11)) != graph.getConnections((graph.getNode(40,50)))){
+			if(graph.getConnections(graph.getNode(20,21)) != graph.getConnections((graph.getNode(20,20)))){
 				System.out.println("SHUT THE FUCK UP CODE");
 			}
 			
-			//boolean hello = aStar.searchNodePath(graph.getNode(10, 10), graph.getNode(10, 15), heuristic, outPath);
-			boolean hello = pfr.search(aStar, 0);
+			boolean hello = aStar.searchNodePath(graph.getNode(20, 20), graph.getNode(20, 21), heuristic, outPath);
+			//boolean hello = pfr.search(aStar, 0);
 			System.out.println(hello);
 			System.out.println(outPath.getCount() + "yay");
 			for(int i = 0; i < outPath.getCount(); i++){
