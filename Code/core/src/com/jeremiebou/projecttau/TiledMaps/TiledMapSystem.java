@@ -2,7 +2,7 @@ package com.jeremiebou.projecttau.TiledMaps;
 
 import com.artemis.Aspect;
 import com.artemis.BaseEntitySystem;
-import com.badlogic.gdx.ai.pfa.Connection;
+import com.badlogic.gdx.ai.pfa.PathFinderRequest;
 import com.badlogic.gdx.ai.pfa.indexed.IndexedAStarPathFinder;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
@@ -57,7 +57,19 @@ public class TiledMapSystem extends BaseEntitySystem {
 			TileGraphPath outPath = new TileGraphPath();
 			TileGraphConnectionPath outPath2 = new TileGraphConnectionPath();
 			TileManhattanHeuristic heuristic = new TileManhattanHeuristic();
-			boolean hello = aStar.searchNodePath(graph.getNode(10, 10), graph.getNode(10, 15), heuristic, outPath);
+			
+			PathFinderRequest<TileNode> pfr = new PathFinderRequest<TileNode>(graph.getNode(10,  10), graph.getNode(10, 15), heuristic, outPath);
+			
+			for (int i = 0; i <= 5; i++) {
+				System.out.println(graph.getConnections(graph.getNode(10, 10 + i)));
+			}
+			
+			if(graph.getConnections(graph.getNode(10,11)) != graph.getConnections((graph.getNode(40,50)))){
+				System.out.println("SHUT THE FUCK UP CODE");
+			}
+			
+			//boolean hello = aStar.searchNodePath(graph.getNode(10, 10), graph.getNode(10, 15), heuristic, outPath);
+			boolean hello = pfr.search(aStar, 0);
 			System.out.println(hello);
 			System.out.println(outPath.getCount() + "yay");
 			for(int i = 0; i < outPath.getCount(); i++){
@@ -92,7 +104,7 @@ public class TiledMapSystem extends BaseEntitySystem {
 	private void processHeightMapIntoGraph(float[][] map){
 		for(int i = 0; i < map.length; i++){
 			for(int j = 0; j < map.length; j++){
-				graph.createNode(i, j, map[i][j]);				
+				graph.createNode(i, j, map[i][j]);		
 			}
 		}
 		
@@ -101,6 +113,7 @@ public class TiledMapSystem extends BaseEntitySystem {
 				Array<Vector2> connections = getConnections(i, j, map);
 				
 				for(int k = 0; k < connections.size; k++){
+					System.out.println("potato: " +i + " " +  j + " " +  (int) connections.get(k).x + " " + (int) connections.get(k).y);
 					graph.addConnection(i, j, (int) connections.get(k).x, (int) connections.get(k).y);
 				}
 				

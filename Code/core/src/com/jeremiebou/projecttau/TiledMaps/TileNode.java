@@ -31,5 +31,9 @@ public class TileNode implements IndexedNode<TileNode>{
 		return "" + height;
 	}
 	
+	public String toString(int i){
+		return "" + x +  " " + y + " " + height;
+	}
+	
 	
 }

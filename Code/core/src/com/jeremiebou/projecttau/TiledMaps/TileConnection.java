@@ -17,7 +17,6 @@ public class TileConnection extends DefaultConnection<TileNode>{
 	}
 	
 	public String toString(){
-		
-		return fromNode.toString() + " " + toNode.toString() + " " + cost;
+		return fromNode.toString(1) + " " + toNode.toString(1) + " " + cost;
 	}
 }
